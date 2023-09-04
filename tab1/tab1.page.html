@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Schedule of Premier League
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col>  
+        <ion-item lines="none">
+          <ion-label>Filter</ion-label>
+          <ion-select class="save-button" [(ngModel)]="selectedMonth" (ionChange)="onMonthChange()" label="Month">
+            <ion-select-option *ngFor="let month of months" [value]="month.value">
+              {{ month.label }}
+            </ion-select-option>
+          </ion-select>
+        </ion-item>
+        <ion-col>        
+          <ion-card *ngFor="let match of schedulefilter">
+            <ion-card-content>             
+              <div class="img-container">
+                <img class="img" src="{{ match.strPoster }}" alt="{{ match.strHomeTeam }}">
+              </div>
+              <ion-card-title class="text-label1">
+                {{ match.strHomeTeam }} vs {{ match.strAwayTeam }}
+              </ion-card-title>
+              <ion-card-title class="text-label">
+                Date : {{ match.dateEvent }} - {{ match.strTimeLocal }}
+              </ion-card-title>
+              <ion-card-title class="text-label">
+                Stadium : {{ match.strVenue }} 
+              </ion-card-title>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+        <ion-col *ngIf="schedulefilter.length === 0">
+          <ion-card>
+            <ion-card-content>
+              <ion-card-title class="text-label">No matches found.</ion-card-title>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

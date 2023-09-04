@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Standings of Premier League
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <table>
+          <thead>
+            <tr class="text-label">
+              <th>Rank</th>
+              <th>Team</th>
+              <th></th>
+              <th></th>
+              <th></th>
+              <th></th>
+              <th>Points</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr (click)="redirectTo(team)" *ngFor="let team of standings" >
+              <td class="text-label1">{{ team.intRank }}</td><td >
+                <ion-thumbnail slot="start">
+                  <img class="logo" src="{{ team.strTeamBadge }}" alt="{{ team.strTeam }} ">
+                </ion-thumbnail>
+              </td>
+              <td class="text-label1">{{ team.strTeam }}</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <!-- <td class="text-label">{{ team.intWin }}</td>
+              <td class="text-label">{{ team.intDraw }}</td>
+              <td class="text-label">{{ team.intLoss }}</td> -->
+              <td class="text-label">{{ team.intPoints }}</td>              
+            </tr>
+          </tbody>
+        </table>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

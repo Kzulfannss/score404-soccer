@@ -1,0 +1,37 @@
+.logo {
+    width: 48px;
+    /* Sesuaikan ukuran yang diinginkan */
+    height: 48px;
+    /* Sesuaikan ukuran yang diinginkan */
+}
+
+.text-label {
+    font-size: 12pt;
+}
+
+.text-label1 {
+    font-size: 14pt;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+@media (max-width: 600px) {
+    table {
+        font-size: 14px;
+    }
+
+    th,
+    td {
+        padding: 6px;
+    }
+}

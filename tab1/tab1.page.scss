@@ -1,0 +1,97 @@
+ion-card {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.img-container {
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%; /* Mengatur aspek rasio 16:9 (ganti dengan nilai yang sesuai jika perlu) */
+  position: relative;
+}
+
+.img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.text-label1 {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.text-label {
+  font-size: 16px;
+}
+
+@media (max-width: 576px) {
+  .img-container {
+    padding-bottom: 50%; /* Ganti dengan nilai yang sesuai untuk aspek rasio pada perangkat mobile */
+  }
+
+  .img {
+    max-width: 100%;
+    border-radius: 4px;
+  }
+
+  
+}
+
+.save-button {
+  display: flexbox;
+  justify-content: center;
+  align-items: center;
+  background-color: #004cff;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 20px;
+  border-width: 0px;
+  cursor: pointer;
+}
+ion-select {
+  --highlight-color-activated: transparent;
+  --border-color: transparent;
+}
+
+.save-button:hover {
+  background-color: #004cff;
+}
+
+.save-button:active {
+  background-color: #004cff;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+@media (max-width: 600px) {
+  table {
+    font-size: 14px;
+  }
+
+  th,
+  td {
+    padding: 6px;
+  }
+
+  ion-thumbnail {
+    max-width: 50px;
+    max-height: 50px;
+  }
+}

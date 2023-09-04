@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Favorite
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <table>
+          <thead>
+            <tr class="text-label1">
+              <th>No.</th>
+              <th>Team</th>
+              <th></th>
+              <th>League</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of items; let i = index" >
+              <td class="text-label2" >
+                {{i + 1}}
+              </td>
+              <td>
+                <ion-thumbnail slot="start">
+                  <img class="logo" src="{{ item.strTeamBadge }}" alt="{{ item.strTeam }} ">
+                </ion-thumbnail>
+              </td>
+              <td class="text-label1">{{ item.strTeam }} </td>
+              <td class="text-label1">{{ item.strLeague }} </td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
